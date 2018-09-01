@@ -1,2 +1,2 @@
 # RF-Ada-DF
-The codes and ruselts for ''RF-Ada-DF: An integrated predictor for identifying protein-protein interactions''
+Codes and Ruselts of paper RF-Ada-DF: An integrated predictor for identifying protein-protein interactions''
