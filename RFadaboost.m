@@ -1,10 +1,10 @@
 function [weight,Factor_all] = RFadaboost(train_x,train_y,K,nTree)
 Factor_all = [];
-     %³õÊ¼»¯È¨ÖØ
+
     [mm,nn]=size(train_x);
     D1=ones(1,mm)/mm;
    
-    %¼ÆËãµÚÒ»¸öÈõ·ÖÀàÆ÷
+
 
     eval([' [Factor_f' num2str(1) ']=TreeBagger(nTree,train_x,train_y);']);
     eval(['save ' 'trainTree\Factor_f' num2str(1) '.mat Factor_f' num2str(1)] )
@@ -30,7 +30,7 @@ Factor_all = [];
 
         D2=D2/sum(D2);
 
-    %µÚ¶ş²½´ÓµÚ¶ş¸öÈõ·ÖÀàÆ÷¿ªÊ¼ÑµÁ·
+    %ç¬¬äºŒæ­¥ä»ç¬¬äºŒä¸ªå¼±åˆ†ç±»å™¨å¼€å§‹è®­ç»ƒ
     doublefault=[0];
     weight=at1;
     eval(['save ' 'weightall\weight' num2str(1) '.mat weight'] );
