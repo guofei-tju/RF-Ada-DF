@@ -7,14 +7,14 @@ crossval_idx = crossvalind('Kfold',data_y,nfolds);
 Result=[];
 K=10;
 nTree=10;
-for fold = 1:nfolds  %1-5ÕÛ
+for fold = 1:nfolds  
  test_idx  = find(crossval_idx==fold);
  test_x=data_x(test_idx,:);
  test_y=data_y(test_idx,:);
  train_idx  = find(crossval_idx~=fold);
  train_x=data_x(train_idx,:);
  train_y=data_y(train_idx,:);  
-for i=1:length(train_y) %°Ñ±êÇ©Í³Ò»Îª{-1£¬1}
+for i=1:length(train_y)
    if train_y(i)==2
        train_y(i)=-1;
    else
@@ -29,7 +29,7 @@ for i=1:length(train_y) %°Ñ±êÇ©Í³Ò»Îª{-1£¬1}
     end    
 end
 
-[weight,Factor_f] = RFadaboost(train_x,train_y,K,nTree);%ÓÃfunctionº¯Êıµ¼³öÑµÁ·Ä£ĞÍºÍÄ£ĞÍ¶ÔÓ¦µÄÈ¨ÖØ¡£
+[weight,Factor_f] = RFadaboost(train_x,train_y,K,nTree);%ç”¨functionå‡½æ•°å¯¼å‡ºè®­ç»ƒæ¨¡å‹å’Œæ¨¡å‹å¯¹åº”çš„æƒé‡ã€‚
 [label,score] = test(weight,Factor_f,test_x,K,nTree);
 
 [Y1,X1,THRE,AUC,OPTROCPT,SUBY,SUBYNAMES] = perfcurve(test_y, score(:,2),'1');
