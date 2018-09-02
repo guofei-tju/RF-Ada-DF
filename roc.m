@@ -9,17 +9,17 @@ FalseNegative = 0;
 max_label = max(test_data_label);
 min_label = min(test_data_label);
 for k=1:l
-    if test_data_label(k)==max_label & predict_label(k)==max_label  %çœŸé˜³æ€§
+    if test_data_label(k)==max_label & predict_label(k)==max_label  %ÕæÑôĞÔ
         TruePositive = TruePositive +1;
     end
-    if test_data_label(k)==min_label & predict_label(k)==min_label %çœŸé˜´æ€§
+    if test_data_label(k)==min_label & predict_label(k)==min_label %ÕæÒõĞÔ
         TrueNegative = TrueNegative +1;
     end 
-    if test_data_label(k)==min_label & predict_label(k)==max_label  %å‡é˜³æ€§
+    if test_data_label(k)==min_label & predict_label(k)==max_label  %¼ÙÑôĞÔ
         FalsePositive = FalsePositive +1;
     end
 
-    if test_data_label(k)==max_label & predict_label(k)==min_label  %å‡é˜´æ€§
+    if test_data_label(k)==max_label & predict_label(k)==min_label  %¼ÙÒõĞÔ
         FalseNegative = FalseNegative +1;
     end
 end

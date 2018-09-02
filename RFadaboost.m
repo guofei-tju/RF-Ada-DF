@@ -1,9 +1,10 @@
 function [weight,Factor_all] = RFadaboost(train_x,train_y,K,nTree)
 Factor_all = [];
-%Initialize sample weights
+     %初始化权重
     [mm,nn]=size(train_x);
     D1=ones(1,mm)/mm;
-%Calculate the first weak classifier
+   
+    %计算第一个弱分类器
 
     eval([' [Factor_f' num2str(1) ']=TreeBagger(nTree,train_x,train_y);']);
     eval(['save ' 'trainTree\Factor_f' num2str(1) '.mat Factor_f' num2str(1)] )
@@ -29,7 +30,7 @@ Factor_all = [];
 
         D2=D2/sum(D2);
 
-    %Calculating the DF value
+    %第二步从第二个弱分类器开始训练
     doublefault=[0];
     weight=at1;
     eval(['save ' 'weightall\weight' num2str(1) '.mat weight'] );
@@ -52,3 +53,20 @@ Factor_all = [];
     
 end
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
