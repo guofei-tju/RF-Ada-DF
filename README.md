@@ -13,7 +13,7 @@ No 2. Classifier
      
      
      Datasets: Matine.mat, Yeast.mat, Human.mat, C.elegan.mat, E.coli.mat, Hpylo.mat, Hsapi.mat, park_yeast
-     and park_yeast. All datasets have 638-dimentional features by MMI and NMBAC.
+     and park_human. All datasets have 638-dimentional features by MMI and NMBAC.
      
      
      RF-Ad-DF: RFadaboost.m, we embed RF into AdaBoost framework, and Newweight.m calculate the training error
